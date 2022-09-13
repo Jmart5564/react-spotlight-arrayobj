@@ -3,19 +3,19 @@
 // OUTPUT: the value of the 'name' attribute i.e. Benny
 // REQS: use destructuring and the function should be a single line
 
-export const getName = ({name}) => {return name}
+export const getName = ({ name }) => {return name}
 
 // INPUT: an object with a nested "address" attribute such as
 //   {name: 'Bob Smith', address: {street: 'Main Street', number: 123, city: 'Anytown', country: 'USA}}
 // OUTPUT: the string 'Bob Smith lives at 123 Main Street, Anytown, USA'
 // REQS: use destructuring and template literals
 
-export const printAddress = ({name, address: {number, street, city, country}}) => {return `${name} lives at ${number} ${street}, ${city}, ${country}`}
+export const printAddress = ({ name, address: { number, street, city, country } }) => {return `${name} lives at ${number} ${street}, ${city}, ${country}`}
 
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
 // as part of the funciton definitions (i.e. there should be no dots in the template literals)
-export const printUserInfo = ({username, name: {first, last}, info: {favorites: {color, food}, pet: {name}, address: {number, street, city, country}}}) => {
+export const printUserInfo = ({ username, name: { first, last }, info: { favorites: { color, food }, pet: { name }, address: { number, street, city, country } } }) => {
   return `
     Username: ${username},
     Full Name: ${first} ${last},
@@ -32,7 +32,7 @@ export const printUserInfo = ({username, name: {first, last}, info: {favorites: 
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
 export const getSum = (...rest) => {
-  let total = 0;
+  let total = 0
   for (const sum of rest) {
     total += sum
   }
@@ -71,8 +71,8 @@ export const getFirstTwoArgs = (firstArg, secondArg, ...rest) => {
 //    use spread operator to create a new object
 
 export const addSneakerCount = (existingObj) => {
-  const sneakerCount = existingObj.shoes.length;
-  let newObj = {...existingObj, sneakerCount}
+  const sneakerCount = existingObj.shoes.length
+  let newObj = { ...existingObj, sneakerCount }
   return newObj
 }
 
@@ -80,16 +80,16 @@ export const addSneakerCount = (existingObj) => {
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
 export const getBrandNames = (brand) => {
-  const brandObj = Object.keys(brand);
+  const brandObj = Object.keys(brand)
   const brandArray = [...brandObj]
-  console.log(brandArray);
+  console.log(brandArray)
   return brandArray
 }
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
-export const totalSneakerCount = ({Nike, Puma, Adidas}) => {
-  const totalSneakers = Nike.shoes.length + Puma.shoes.length + Adidas.shoes.length;
+export const totalSneakerCount = ({ Nike, Puma, Adidas }) => {
+  const totalSneakers = Nike.shoes.length + Puma.shoes.length + Adidas.shoes.length
   return totalSneakers
 }
 
@@ -101,7 +101,7 @@ export const totalSneakerCount = ({Nike, Puma, Adidas}) => {
 // Source: https://edabit.com/challenge/pPNAs5PvB3WvnDwDM
 
 export const convertToArray = (object) => {
-  const entries = Object.entries(object);
+  const entries = Object.entries(object)
   return entries
 }
 
