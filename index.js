@@ -3,26 +3,26 @@
 // OUTPUT: the value of the 'name' attribute i.e. Benny
 // REQS: use destructuring and the function should be a single line
 
-export const getName = () => {}
+export const getName = ({name}) => {return name}
 
 // INPUT: an object with a nested "address" attribute such as
 //   {name: 'Bob Smith', address: {street: 'Main Street', number: 123, city: 'Anytown', country: 'USA}}
 // OUTPUT: the string 'Bob Smith lives at 123 Main Street, Anytown, USA'
 // REQS: use destructuring and template literals
 
-export const printAddress = () => {}
+export const printAddress = ({name, address: {number, street, city, country}}) => {return `${name} lives at ${number} ${street}, ${city}, ${country}`}
 
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
 // as part of the funciton definitions (i.e. there should be no dots in the template literals)
-export const printUserInfo = (user) => {
+export const printUserInfo = ({username, name: {first, last}, info: {favorites: {color, food}, pet: {name}, address: {number, street, city, country}}}) => {
   return `
-    Username: ${user.username},
-    Full Name: ${user.name.first} ${user.name.last},
-    Favorite Color: ${user.info.favorites.color},
-    Favorite Food: ${user.info.favorites.food},
-    Pet Name: ${user.info.pet.name},
-    Address: ${user.info.address.number} ${user.info.address.street}, ${user.info.address.city}, ${user.info.address.country}
+    Username: ${username},
+    Full Name: ${first} ${last},
+    Favorite Color: ${color},
+    Favorite Food: ${food},
+    Pet Name: ${name},
+    Address: ${number} ${street}, ${city}, ${country}
     `
 }
 
@@ -31,14 +31,23 @@ export const printUserInfo = (user) => {
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = () => {}
+export const getSum = (...rest) => {
+  let total = 0;
+  for (const sum of rest) {
+    total += sum
+  }
+  return total
+}
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
 // REQS: use rest parameters
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
-export const getFirstTwoArgs = () => {}
+export const getFirstTwoArgs = (firstArg, secondArg, ...rest) => {
+  let result = [firstArg, secondArg, rest]
+  return result
+}
 
 // INPUT: an object with the following structure
 // {
@@ -61,7 +70,9 @@ export const getFirstTwoArgs = () => {}
 //    return a NEW object, do not modify the object passed in to the function
 //    use spread operator to create a new object
 
-export const addSneakerCount = () => {}
+export const addSneakerCount = ({shoes, ...rest}) => {
+
+}
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed

@@ -15,7 +15,7 @@ test('getName should return the name attribute from an object', () => {
   expect(getName({ name: 'Benny' })).toBe('Benny')
 })
 
-test.skip('printAddress should return a formatted string', () => {
+test('printAddress should return a formatted string', () => {
   const input = {
     name: 'Bob Smith',
     address: { street: 'Main Street', number: 123, city: 'Anytown', country: 'USA' },
@@ -23,7 +23,7 @@ test.skip('printAddress should return a formatted string', () => {
   expect(printAddress(input)).toBe('Bob Smith lives at 123 Main Street, Anytown, USA')
 })
 
-test.skip('printUserInfo should return a formatted string', () => {
+test('printUserInfo should return a formatted string', () => {
   const user = {
     username: 'bobloblaw',
     name: {
@@ -46,12 +46,12 @@ test.skip('printUserInfo should return a formatted string', () => {
     `)
 })
 
-test.skip('getSum should return the sum of inputs', () => {
+test('getSum should return the sum of inputs', () => {
   expect(getSum(1, 2, 3)).toBe(6)
   expect(getSum(1, 2, 3, 4, 5)).toBe(15)
 })
 
-test.skip('getFirstTwoArgs returns the first two arguments as an array', () => {
+test('getFirstTwoArgs returns the first two arguments as an array', () => {
   expect(getFirstTwoArgs(1, 2, 3, 4, 5)).toStrictEqual([1, 2, [3, 4, 5]])
   expect(getFirstTwoArgs('a', 'b', 'c', 'd')).toStrictEqual(['a', 'b', ['c', 'd']])
 })
