@@ -20,9 +20,6 @@
     "cy": false
   },
   "rules": {
-        "endOfLine": "auto"
-      }
-    ,
     "eqeqeq": ["error", "always"],
     "no-console": "warn",
     "indent": [
