@@ -90,7 +90,6 @@ export const getBrandNames = (brand) => {
 // OUTPUT: total number of sneaker types across all brands (14)
 export const totalSneakerCount = ({Nike, Puma, Adidas}) => {
   const totalSneakers = Nike.shoes.length + Puma.shoes.length + Adidas.shoes.length;
-  console.log(totalSneakers)
   return totalSneakers
 }
 
