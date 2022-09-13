@@ -56,7 +56,7 @@ test('getFirstTwoArgs returns the first two arguments as an array', () => {
   expect(getFirstTwoArgs('a', 'b', 'c', 'd')).toStrictEqual(['a', 'b', ['c', 'd']])
 })
 
-test.skip('addSneakerCount should append the sneaker count to the object', () => {
+test('addSneakerCount should append the sneaker count to the object', () => {
   const nike = {
     shoes: ['Air Max', 'Air Force', 'Air Jordan', 'Air Mag', 'Pegasus', 'Kobe'],
     slogan: 'Just Do It',
@@ -67,11 +67,11 @@ test.skip('addSneakerCount should append the sneaker count to the object', () =>
   expect(addSneakerCount(nike)).not.toBe(nike)
 })
 
-test.skip('getBrandNames should return an array of the names of the sneaker brands', () => {
+test('getBrandNames should return an array of the names of the sneaker brands', () => {
   expect(getBrandNames(brands)).toStrictEqual(['Nike', 'Puma', 'Adidas'])
 })
 
-test.skip('totalSneakerCount should return total number of sneakers', () => {
+test('totalSneakerCount should return total number of sneakers', () => {
   expect(totalSneakerCount(brands)).toBe(14)
 })
 
